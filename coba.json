@@ -1,0 +1,24 @@
+[
+  {
+    "nama": "Muhammad Alwi",
+    "umur": 21,
+    "nim": "210209501011",
+    "lulus": true,
+    "hobby": ["ngoding", "bola"],
+    "pembimbing": {
+      "pembimbing 1": "alwi",
+      "pembimbing 2": "alya"
+    }
+  },
+  {
+    "nama": "Alya",
+    "umur": 21,
+    "nim": "21020950110",
+    "lulus": true,
+    "hobby": ["ngoding", "bola"],
+    "pembimbing": {
+      "pembimbing 1": "alwi",
+      "pembimbing 2": "alya"
+    }
+  }
+]
