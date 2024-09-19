@@ -1,9 +1,9 @@
 <?php
-$data = file_get_contents('./asus.json');
+$data = file_get_contents('asus.json');
 $asus = json_decode($data, true);
 
-$asus = $asus["Asus"];
-echo $asus[0]["Author"];
+$asus = $asus["Labtop"];
+echo $asus[0]["productName"];
 ?>
 
 <!doctype html>
@@ -19,13 +19,13 @@ echo $asus[0]["Author"];
 <body>
     <nav class="navbar bg-dark border-bottom border-body navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class=" container-fluid">
-            <a class="navbar-brand" href="#"><img src="./img/logo_unm.jpg" width="100px" height="100px" alt="unm"></a>
+            <a class="navbar-brand" href="#"><img src="./menu/img/logo_unm.jpg" width="100px" height="100px" alt="unm"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">All Menu</a>
                 </div>
             </div>
         </div>
@@ -38,13 +38,13 @@ echo $asus[0]["Author"];
         </div>
         <div class="row mt-3">
             <?php foreach ($asus as $row) : ?>
-                <div class="col-md-4">
+                <div class="col-md-4 text-center">
                     <div class="card mb-3" style="width: 18rem;">
-                        <img src="https://media.istockphoto.com/id/1157732232/photo/laptop-computer-mock-up-with-empty-blank-white-screen-isolated-on-pink-background-float-or.webp?a=1&b=1&s=612x612&w=0&k=20&c=UNhf2dpVVrBBJvW_GJalFubd_BVaMPMd1HOCNvivg-U=" class="card-img-top" alt="...">
+                        <img src="menu/img/<?= $row["image"] ?>" class="card-img-top" alt="labtop">
                         <div class="card-body">
-                            <h5 class="card-title">Labtop Tuf Gaming A15</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <h5>Rp. 12.000.000</h5>
+                            <h5><?= $row["productName"] ?></h5>
+                            <p class="card-text"><?= $row["description"] ?></p>
+                            <h5>Rp <?= number_format($row["price"], 0, ',', '.') ?></h5>
                             <a href="#" class="btn btn-primary mt-2">Pesan Sekarang</a>
                         </div>
                     </div>
